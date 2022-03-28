@@ -1,5 +1,5 @@
-﻿using Domain.Models;
-using Domain.UnitOfWork;
+﻿using Library.Domain.Models;
+using Library.Domain.UnitOfWork;
 
 namespace UnitOfWorkRepositoryPatterns.Services
 {

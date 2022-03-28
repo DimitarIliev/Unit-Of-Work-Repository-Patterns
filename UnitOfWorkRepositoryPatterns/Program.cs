@@ -1,6 +1,6 @@
-using Domain.UnitOfWork;
-using Infrastructure;
-using Infrastructure.UnitOfWork;
+using Library.Domain.UnitOfWork;
+using Library.Infrastructure;
+using Library.Infrastructure.UnitOfWork;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);

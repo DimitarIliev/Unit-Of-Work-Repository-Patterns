@@ -1,4 +1,4 @@
-﻿using Domain.Models;
+﻿using Library.Domain.Models;
 
 namespace UnitOfWorkRepositoryPatterns.Services
 {
