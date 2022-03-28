@@ -1,5 +1,6 @@
-﻿using Library.Domain.Models;
+﻿using Library.Domain.Entities;
 using Library.Domain.UnitOfWork;
+using UnitOfWorkRepositoryPatterns.Dtos;
 
 namespace UnitOfWorkRepositoryPatterns.Services
 {
@@ -11,8 +12,15 @@ namespace UnitOfWorkRepositoryPatterns.Services
             _unitOfWork = unitOfWork;
         }
 
-        public async Task AddBook(Book book)
+        public async Task AddBook(BookDto bookDto)
         {
+            var book = new Book
+            {
+                Genre = bookDto.Genre,
+                NmPages = bookDto.NmPages,
+                Title = bookDto.Title,
+            };
+
             _unitOfWork.BookRepository.Add(book);
             await _unitOfWork.CommitAsync();
         }

@@ -2,6 +2,7 @@ using Library.Domain.UnitOfWork;
 using Library.Infrastructure;
 using Library.Infrastructure.UnitOfWork;
 using Microsoft.EntityFrameworkCore;
+using UnitOfWorkRepositoryPatterns.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,6 +12,8 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddTransient(typeof(IBookService), typeof(BookService));
 
 //Database
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();

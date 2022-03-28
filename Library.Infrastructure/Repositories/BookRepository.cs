@@ -1,6 +1,5 @@
-﻿using Library.Domain.Models;
+﻿using Library.Domain.Entities;
 using Library.Domain.Repositories;
-
 
 namespace Library.Infrastructure.Repositories
 {

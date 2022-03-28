@@ -1,5 +1,6 @@
-﻿using Library.Domain.Models;
+﻿using Library.Domain.Entities;
 using Microsoft.AspNetCore.Mvc;
+using UnitOfWorkRepositoryPatterns.Dtos;
 using UnitOfWorkRepositoryPatterns.Services;
 
 namespace UnitOfWorkRepositoryPatterns.Controllers
@@ -19,7 +20,7 @@ namespace UnitOfWorkRepositoryPatterns.Controllers
           => await _bookService.GetAll();
 
         [HttpPost]
-        public async Task AddBook(Book book)
+        public async Task AddBook([FromBody] BookDto book)
         {
             await _bookService.AddBook(book);
         }

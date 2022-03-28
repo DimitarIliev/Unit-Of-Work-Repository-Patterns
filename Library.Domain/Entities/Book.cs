@@ -1,4 +1,4 @@
-﻿namespace Library.Domain.Models
+﻿namespace Library.Domain.Entities
 {
     public class Book : BaseEntity
     {
