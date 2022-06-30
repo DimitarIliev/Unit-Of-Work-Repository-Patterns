@@ -6,3 +6,5 @@ With this we ensure that either all operations succeed or fail as a single unit.
 
 # DbContext
 DbContext class is a combination of the Unit of Work and Repository patterns, where the DbContext is an abstraction of the Unit of Work pattern and a DbSet is an abstraction of the Repository pattern.
+
+Link to article: https://www.linkedin.com/pulse/repository-unit-work-patterns-net-core-dimitar-iliev/
