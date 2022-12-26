@@ -19,13 +19,13 @@ namespace Library.Infrastructure
             => _dbContext.Add(entity);
 
         public async Task AddAsync(T entity, CancellationToken cancellationToken = default) 
-            => await _dbContext.AddAsync(entity);
+            => await _dbContext.AddAsync(entity, cancellationToken);
 
         public void AddRange(IEnumerable<T> entities) 
             => _dbContext.AddRange(entities);
 
         public async Task AddRangeAsync(IEnumerable<T> entities, CancellationToken cancellationToken = default) 
-            => await _dbContext.AddRangeAsync(entities);
+            => await _dbContext.AddRangeAsync(entities, cancellationToken);
 
         public T Get(Expression<Func<T, bool>> expression) 
             => _entitiySet.FirstOrDefault(expression);
@@ -43,7 +43,7 @@ namespace Library.Infrastructure
             => await _entitiySet.Where(expression).ToListAsync(cancellationToken);
 
         public async Task<T> GetAsync(Expression<Func<T, bool>> expression, CancellationToken cancellationToken = default) 
-            => await _entitiySet.FirstOrDefaultAsync(expression);
+            => await _entitiySet.FirstOrDefaultAsync(expression, cancellationToken);
 
         public void Remove(T entity) 
             => _dbContext.Remove(entity);
